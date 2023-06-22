@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import MovieTile from '../components/MovieTile';
 
 function HomePage() {
 
@@ -19,12 +20,12 @@ function HomePage() {
     }, []);
   
     return (
-      <div>
-        {data.map((item, index) => (
-          <p key={index}>{item.title}</p>
-        ))}
-      </div>
-    );
+        <div>
+          {data.map(movie => (
+            <MovieTile key={movie.id} movie={movie} />
+          ))}
+        </div>
+      );
 }
 
 export default HomePage
