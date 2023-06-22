@@ -1,10 +1,12 @@
 import HomePage from "./pages/HomePage";
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
   return (
-    <div className="App">
+    <ChakraProvider>
       <HomePage />
-    </div>
+    </ChakraProvider>
+
   );
 }
 
