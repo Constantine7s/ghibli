@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import MovieTile from '../components/MovieTile';
+import { Flex } from '@chakra-ui/react';
 
 function HomePage() {
 
@@ -20,11 +21,11 @@ function HomePage() {
     }, []);
   
     return (
-        <div>
+        <Flex flexWrap='wrap' justifyContent={'space-evenly'}>
           {data.map(movie => (
             <MovieTile key={movie.id} movie={movie} />
           ))}
-        </div>
+        </Flex>
       );
 }
 

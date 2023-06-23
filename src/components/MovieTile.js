@@ -3,14 +3,13 @@ import React from 'react'
 
 function MovieTile({ movie }) {
   return (
-    <Card maxW='sm' variant='outline' margin='3' backgroundColor="#FDF2E9"
+    <Card maxW='sm' variant='outline' marginY='3' marginX='1' backgroundColor="#FDF2E9"
       _hover={{ backgroundColor: '#F6DDCC' }}>
       <CardBody>
         <Image
           src={movie.image}
-          alt={movie}
+          alt={movie.title}
           borderRadius='4g'
-          
         />
         <Heading size='md' marginTop='3'>{movie.title}</Heading>
         <Flex mt='6' spacing='3' justifyContent='space-between'>

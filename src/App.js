@@ -1,13 +1,15 @@
+import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import { ChakraProvider } from '@chakra-ui/react'
+import SingleMoive from "./pages/SingleMoive";
 
 function App() {
   return (
-    <ChakraProvider>
-      <HomePage />
-    </ChakraProvider>
-
-  );
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/movie/:id" element={<SingleMoive />} />
+      </Routes>
+    </div>);
 }
 
 export default App;
