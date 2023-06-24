@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import MovieTile from '../components/MovieTile';
-import { Box, Input, Skeleton } from '@chakra-ui/react';
+import { Box, Image, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
 import TilesSkeleton from '../components/TilesSkeleton';
+import { Search2Icon } from '@chakra-ui/icons';
 
 function HomePage() {
 
@@ -33,7 +34,14 @@ function HomePage() {
 
   return (
     <Box>
-      <Input display='flex' placeholder='Filter by name or year' size='sm' width='384px' marginY='3' marginX='auto' onChange={handleSearch} />
+
+      <Image src='https://www.studioghibli.com.au/wp-content/uploads/2017/07/ghibli_logo_gold.png' alt='Studio Ghibli Logo' marginX='auto' marginY='10'/>
+      <InputGroup size='sm' width='384px' marginY='3' marginX='auto'>
+        <InputRightElement pointerEvents='none'>
+          <Search2Icon color='gray.300' />
+        </InputRightElement>
+        <Input focusBorderColor='orange.100' variant='outline' placeholder='Filter by name or year' onChange={handleSearch} />
+      </InputGroup>
       <Box display='flex' flexWrap='wrap' justifyContent={'space-evenly'}>
         {loading ? <TilesSkeleton /> : filteredMovies.map(movie => (
           <MovieTile key={movie.id} movie={movie} />
