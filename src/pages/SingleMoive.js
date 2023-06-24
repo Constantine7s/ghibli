@@ -7,6 +7,7 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  Tag,
 } from '@chakra-ui/react';
 
 
@@ -21,7 +22,6 @@ function SingleMoive() {
       try {
         const result = await axios.get(`https://ghibliapi.vercel.app/films/${id}`
         );
-        console.log(result);
         setMovie(result.data);
       } catch (error) {
         console.error(error);
@@ -33,11 +33,12 @@ function SingleMoive() {
   useEffect(() => {
     const fetchPeople = async () => {
       if (movie && movie.people) {
-        const names = await Promise.all(movie.people.map(async (url) => {
+        const people = await Promise.all(movie.people.map(async (url) => {
           const response = await axios.get(url);
           return response.data.name;
         }));
-        setNames(names);
+        setNames(people);
+        console.log(names)
       }
     };
 
@@ -61,7 +62,12 @@ function SingleMoive() {
 
   return (
 
-    <Center paddingY='6' backgroundImage={movie_banner} bgSize='cover' bgPos="center" bgAttachment='fixed' >
+    <Center
+      paddingY='6'
+      backgroundImage={movie_banner}
+      bgSize='cover'
+      bgPos="center"
+      bgAttachment='fixed' >
       <Stack
         width='80%'
         borderRadius='5'
@@ -97,10 +103,8 @@ function SingleMoive() {
             marginBottom='3'
             textAlign='left'
             paddingX='3'>
-
             {description}
           </Text>
-
 
           <Accordion minH='100px' minW='100%' allowMultiple >
             <AccordionItem>
@@ -115,25 +119,21 @@ function SingleMoive() {
                 <Text><b> Producer:</b> {producer} </Text>
                 <Text><b> Length:</b> {running_time}</Text>
                 <Text><b> Release date:</b> {release_date} </Text>
-
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem>
-              <AccordionButton>
-                <Box flex='1' textAlign='left' >
-                  People
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-              <AccordionPanel pb={2}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat.
-              </AccordionPanel>
-            </AccordionItem>
-
-
+            {names[0] ?
+              <AccordionItem>
+                <AccordionButton>
+                  <Box flex='1' textAlign='left' >
+                    People
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+                <AccordionPanel pb={2}>
+                  {names.map(char => (<Tag p='2' margin='2' bgColor='orange.100'> {char} </Tag>))}
+                </AccordionPanel>
+              </AccordionItem> : <></>
+            }
           </Accordion>
 
           <Button
@@ -156,59 +156,6 @@ function SingleMoive() {
       </Stack>
 
     </Center>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // <Box backgroundImage={movie_banner} bgPos="center"
-    //   backgroundRepeat="no-repeat" bgSize='cover' bgPos="center" bgAttachment='fixed' display='flex'  >
-
-    //   <Box width='80%' borderRadius={5} marginTop='10' marginBottom='10' marginX='auto' padding='10' backgroundColor='whiteAlpha.900' display='flex'>
-    //     <Image src={image} alt={title} width='400px'  float='left' marginRight='3' />
-    //     <Box display='flex'>
-
-    //       <Box>{title}</Box>
-    //       <Box>{original_title}</Box>
-    //       <Box>{original_title_romanised}</Box>
-    //       <Box>{description}</Box>
-    //       <p><strong>Director:</strong> {director}</p>
-    //       <p><strong>Producer:</strong> {producer}</p>
-    //       <p><strong>Release Date:</strong> {release_date}</p>
-    //       <p><strong>Running Time:</strong> {running_time} minutes</p>
-    //       <ul>
-    //         {names.map((name, index) => (
-    //           <li key={index}>
-    //             {name}
-    //           </li>
-    //         ))}
-    //       </ul>
-    //     </Box>
-    //   </Box>
-    // </Box>
-
-
-
-
-
-
-
 
   );
 }
