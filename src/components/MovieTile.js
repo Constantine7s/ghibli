@@ -1,10 +1,9 @@
 import { Box, LinkBox, Image, Heading, Text, Flex, LinkOverlay } from '@chakra-ui/react';
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
 
 function MovieTile({ movie }) {
   return (
-    <LinkBox maxW='sm' padding='5' borderRadius='5' marginY='3' marginX='1' backgroundColor="#FDF2E9"
+    <LinkBox  height='648px' width='386px' maxW='sm' padding='5' borderRadius='5' marginY='3' marginX='1' backgroundColor="#FDF2E9"
       _hover={{ backgroundColor: '#F6DDCC' }}>
       <LinkOverlay href={`/movie/${movie.id}`} >
         <Box>
@@ -23,7 +22,6 @@ function MovieTile({ movie }) {
             </Text>
           </Flex>
         </Box>
-
       </LinkOverlay>
     </LinkBox>
   );
