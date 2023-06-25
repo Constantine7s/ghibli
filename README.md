@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Studio Ghibli Movie List App
+This is a simple React application that fetches a list of Studio Ghibli movies from an API and displays them in a user-friendly format. The app utilizes the Chakra UI library for styling and Cypress for testing purposes.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##  Features
+- Fetches movie data from the Studio Ghibli API.
+- Displays a list of movies with details such as title, thumbnail, release year, and length.
+- Allows users to filter movies by title or release year.
+- Provides a detailed view page for each movie with additional information such as title, original title, original title romanized, description, director, producer, release date, running time, image, and a list of people involved.
+- Supports pagination for browsing through the movie list.
+- Responsive design for seamless viewing on different devices.
+- Includes testing scripts with Cypress for automated end-to-end testing.
 
-## Available Scripts
+## Technologies Used
+- React: A JavaScript library for building user interfaces.
+- Chakra UI: A simple and modular UI component library for React.
+- Cypress: A JavaScript end-to-end testing framework for web applications.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+### Installation
+1. Clone the git repository 
+```bash
+  git clone https://github.com/Constantine7s/ghibli
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Navigate to the project directory:
+```bash
+cd ghibli
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. Install the dependencies using npm:
+```bash
+ npm install
+```
 
-### `npm test`
+4. Start the development server:
+```bash
+ npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open your web browser and visit http://localhost:3000 to view the app.
 
-### `npm run build`
+## Usage
+Upon opening the app, you will see a list of Studio Ghibli movies.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Use the search bar at the top of the page to filter movies by title or release year.
+- Click on a movie to view more details on a separate page.
+- Use the pagination buttons at the bottom of the list to navigate through the movie pages.
+- The app is responsive and can be used on various screen sizes and devices.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Testing 
+This project includes automated tests using Cypress for end-to-end testing. To run the tests, make sure you have the development server running.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Open a new terminal window.
+2. Navigate to the project directory if you haven't already.
+3. Run the Cypress testing suite:
 
-### `npm run eject`
+```bash
+ npm cypress
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Cypress will launch and execute the defined tests, providing you with real-time feedback on the results.
