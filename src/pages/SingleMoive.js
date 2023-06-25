@@ -133,7 +133,7 @@ function SingleMoive() {
                 <AccordionPanel pb={2}>
                   {names.map(char => (<Tag p='2' margin='1' bgColor='orange.100'> {char} </Tag>))}
                 </AccordionPanel>
-              </AccordionItem> : <></>
+              </AccordionItem> : null
             }
           </Accordion>
           <Button
