@@ -36,7 +36,7 @@ cd ghibli
 
 4. Start the development server:
 ```bash
- npm install
+ npm start
 ```
 
 Open your web browser and visit http://localhost:3000 to view the app.
