@@ -2,7 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios';
 import {
-  Badge, Box, Button, Center, Flex, Heading, Image, Stack, Text, Accordion,
+  Box,
+  Button,
+  Center,
+  Flex, Heading,
+  Image, Stack,
+  Text,
+  Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
@@ -15,7 +21,6 @@ function SingleMoive() {
   const { id } = useParams()
   const [movie, setMovie] = useState({});
   const [names, setNames] = useState([]);
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,10 +63,7 @@ function SingleMoive() {
     movie_banner
   } = movie;
 
-
-
   return (
-
     <Center
       paddingY='6'
       backgroundImage={movie_banner}
@@ -77,8 +79,7 @@ function SingleMoive() {
         padding='10'
         backgroundColor='whiteAlpha.900'
         direction={{ base: 'column', md: 'row' }}
-        boxShadow='2xl'
-      >
+        boxShadow='2xl' >
         <Flex flex='1' bg="blue.200">
           <Image
             objectFit="cover"
@@ -117,7 +118,7 @@ function SingleMoive() {
               <AccordionPanel pb={2}>
                 <Text> <b>Director: </b>{director} </Text>
                 <Text><b> Producer:</b> {producer} </Text>
-                <Text><b> Length:</b> {running_time}</Text>
+                <Text><b> Length:</b> {running_time} min</Text>
                 <Text><b> Release date:</b> {release_date} </Text>
               </AccordionPanel>
             </AccordionItem>
@@ -130,12 +131,11 @@ function SingleMoive() {
                   <AccordionIcon />
                 </AccordionButton>
                 <AccordionPanel pb={2}>
-                  {names.map(char => (<Tag p='2' margin='2' bgColor='orange.100'> {char} </Tag>))}
+                  {names.map(char => (<Tag p='2' margin='1' bgColor='orange.100'> {char} </Tag>))}
                 </AccordionPanel>
               </AccordionItem> : <></>
             }
           </Accordion>
-
           <Button
             as={Link}
             to="/"
@@ -150,13 +150,9 @@ function SingleMoive() {
           >
             Go to Home
           </Button>
-
         </Stack>
-
       </Stack>
-
     </Center>
-
   );
 }
 
