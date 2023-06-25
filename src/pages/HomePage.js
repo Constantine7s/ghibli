@@ -25,6 +25,7 @@ function HomePage() {
   const currentMovies = filteredMovies.slice(indexOfFirstItem, indexOfLastItem);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(filteredMovies.length / itemsPerPage); i++) {
     pageNumbers.push(i);
@@ -44,7 +45,6 @@ function HomePage() {
     fetchData();
   }, []);
 
- 
 
   return (
     <Box>

@@ -4,8 +4,16 @@ import React from 'react'
 
 function MovieTile({ movie }) {
   return (
-    <LinkBox height='648px' width='386px' maxW='sm' padding='5' borderRadius='5' marginY='3' marginX='1' backgroundColor='orange.100'
-      _hover={{ backgroundColor: 'orange.200' }}>
+    <LinkBox
+      height='648px'
+      width='386px' maxW='sm'
+      padding='5'
+      borderRadius='5'
+      marginY='3'
+      marginX='1'
+      backgroundColor='orange.100'
+      _hover={{ backgroundColor: 'orange.200' }}
+      className='movie-tile'>
       <LinkOverlay href={`/movie/${movie.id}`} >
         <Box>
           <Image
@@ -22,11 +30,11 @@ function MovieTile({ movie }) {
               </Text>
             </HStack>
             <HStack>
-              <TimeIcon/>
+              <TimeIcon />
               <Text>
                 {movie.running_time} min
               </Text>
-             </HStack>
+            </HStack>
           </Flex>
         </Box>
       </LinkOverlay>
