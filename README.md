@@ -21,7 +21,7 @@ This is a simple React application that fetches a list of Studio Ghibli movies f
 ### Installation
 1. Clone the git repository 
 ```bash
-  git clone https://github.com/Constantine7s/ghibli
+  git clone https://github.com/Constantine7s/ghibli.git
 ```
 
 2. Navigate to the project directory:
