@@ -2,11 +2,12 @@
 This is a simple React application that fetches a list of Studio Ghibli movies from an API and displays them in a user-friendly format. The app utilizes the Chakra UI library for styling and Cypress for testing purposes.
 
 ##  Features
-- Fetches movie data from the Studio Ghibli API.
+- Fetches movie data from the Studio Ghibli API (https://ghibliapi.vercel.app/).
 - Displays a list of movies with details such as title, thumbnail, release year, and length.
 - Allows users to filter movies by title or release year.
 - Provides a detailed view page for each movie with additional information such as title, original title, original title romanized, description, director, producer, release date, running time, image, and a list of people involved.
 - Supports pagination for browsing through the movie list.
+- Includes a loading skeleton to provide a better user experience while fetching movie data.
 - Responsive design for seamless viewing on different devices.
 - Includes testing scripts with Cypress for automated end-to-end testing.
 
