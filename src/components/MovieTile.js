@@ -4,8 +4,8 @@ import React from 'react'
 
 function MovieTile({ movie }) {
   return (
-    <LinkBox height='648px' width='386px' maxW='sm' padding='5' borderRadius='5' marginY='3' marginX='1' backgroundColor="#FDF2E9"
-      _hover={{ backgroundColor: '#F6DDCC' }}>
+    <LinkBox height='648px' width='386px' maxW='sm' padding='5' borderRadius='5' marginY='3' marginX='1' backgroundColor='orange.100'
+      _hover={{ backgroundColor: 'orange.200' }}>
       <LinkOverlay href={`/movie/${movie.id}`} >
         <Box>
           <Image
