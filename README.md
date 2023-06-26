@@ -16,9 +16,11 @@ This is a simple React application that fetches a list of Studio Ghibli movies f
 - Chakra UI: A simple and modular UI component library for React.
 - Cypress: A JavaScript end-to-end testing framework for web applications.
 
+##  Demo
+You can try a live demo of the app at  https://ghiblimovies.vercel.app
+
 ## Installation
 
-### Installation
 1. Clone the git repository 
 ```bash
   git clone https://github.com/Constantine7s/ghibli.git
